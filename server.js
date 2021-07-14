@@ -51,7 +51,7 @@ app.get("/api/menu", function (req, res) {
 });
 
 app.get("/book", function (req, res) {
-  res.sendFile(path.join(__dirname, "order.html"));
+  res.sendFile(path.join(__dirname, "book.html"));
 });
 
 app.post("/api/tables", function (req, res) {
