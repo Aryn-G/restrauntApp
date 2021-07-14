@@ -10,19 +10,19 @@ const waitlist = [];
 const menu = [
   {
     food: "pizza",
-    price: 2.00,
+    price: 2.0,
   },
   {
     food: "fries",
-    price: 0.50,
+    price: 0.5,
   },
   {
     food: "sprite",
-    price: 0.50,
+    price: 0.5,
   },
   {
     food: "chips",
-    price: 0.50,
+    price: 0.5,
   },
 ];
 
@@ -74,6 +74,4 @@ app.post("/api/waitlist", function (req, res) {
   res.json(newWait);
 });
 
-app.listen(PORT, function () {
-  console.log("Listening at http://localhost:" + PORT);
-});
+app.listen(PORT, () => console.log("Listening at http://localhost:" + PORT));

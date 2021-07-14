@@ -1,0 +1,28 @@
+{
+  "name": "44-tfrestaurant",
+  "version": "1.0.0",
+  "description": "* Description: Basic app demonstrating Node and Express with jQuery. Overall purpose is to help schedule reservation requests. Restaurant has just 5 tables available. First five requests get a reservation, every request after that is sent to the waiting list.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "14.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aryn-G/restrauntApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aryn-G/restrauntApp/issues"
+  },
+  "homepage": "https://github.com/Aryn-G/restrauntApp#readme"
+}
