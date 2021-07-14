@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      section {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #112d42;
+      }
+      section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background: #03a9f4;
+      }
+      section .container {
+        position: relative;
+        min-width: 1100px;
+        min-height: 550px;
+        display: flex;
+        z-index: 1000;
+      }
+      section .container .contactinfo {
+        position: absolute;
+        top: 40px;
+        width: 350px;
+        background: #0f3959;
+        z-index: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+      }
+      section .container .contactinfo h2 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      section .container .contactinfo .info {
+        position: relative;
+        margin: 20px 0;
+      }
+      section .container .contactinfo .info li {
+        position: relative;
+        list-style: none;
+        display: flex;
+        margin: 20px 0;
+        cursor: pointer;
+        align-items: flex-start;
+      }
+      section .container .contactinfo .info li span:nth-child(1) {
+        width: 30px;
+        min-width: 30px;
+      }
+      section .container .contactinfo .info li span:nth-child(1) svg {
+        transition: opacity 0.2s;
+        max-width: 100%;
+        filter: invert(1);
+        opacity: 0.5;
+      }
+
+      section .container .contactinfo .info li span:nth-child(2) {
+        transition: opacity 0.2s;
+        color: white;
+        margin-left: 10px;
+        font-weight: 300;
+        opacity: 0.5;
+      }
+      section .container .contactinfo .info li span:nth-child(2) svg {
+        max-width: 100%;
+        filter: invert(1);
+        opacity: 0.5;
+      }
+
+      section .container .contactinfo .info li:hover span:nth-child(1) svg,
+      section .container .contactinfo .info li:hover span:nth-child(2) {
+        transition: opacity 0.2s;
+        opacity: 1;
+      }
+
+      section .container .contact-form {
+        position: absolute;
+        padding: 70px 50px;
+        background: white;
+        margin-left: 150px;
+        padding-left: 250px;
+        width: calc(100% - 150px);
+        height: 100%;
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.5);
+      }
+      section .container .contact-form h2 {
+        color: #0f3959;
+        font-size: 24px;
+        font-weight: 500;
+      }
+      section .container .contact-form .form-box {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 30px;
+      }
+      section .container .contact-form .form-box .input-box {
+        position: relative;
+        margin: 0 0 35px 0;
+      }
+      section .container .contact-form .form-box .input-box.w50 {
+        width: 47%;
+      }
+      section .container .contact-form .form-box .input-box.w100 {
+        width: 100%;
+      }
+      section .container .contact-form .form-box .input-box input {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: #333;
+        border: none;
+        border-bottom: 1px solid #777;
+        outline: none;
+      }
+      section .container .contact-form .form-box .input-box span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: #333;
+        transition: 0.3s;
+        pointer-events: none;
+      }
+      section .container .contact-form .form-box .input-box input:focus ~ span,
+      section .container .contact-form .form-box .input-box input:valid ~ span {
+        transform: translateY(-20px);
+        font-size: 12px;
+        font-weight: 400px;
+        letter-spacing: 1px;
+        color: #ff568c;
+      }
+      section .container .contact-form .form-box .input-box #book {
+        transition: 0.3s;
+        position: relative;
+        cursor: pointer;
+        background: #0f3959;
+        color: white;
+        border: none;
+        max-width: 150px;
+        padding: 12px;
+      }
+      section .container .contact-form .form-box .input-box #book:hover {
+        background: #ff568c;
+      }
+      form {
+        width: 100%;
+      }
+    </style>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="contactinfo">
+          <div>
+            <h2>Contact Info</h2>
+            <ul class="info">
+              <li>
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-geo-alt-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  >1234 FakeRoad Drive<br />
+                  Charlotte, NC<br />
+                  28105</span
+                >
+              </li>
+              <li>
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-envelope-open-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"
+                    />
+                  </svg>
+                </span>
+                <span>fakeEmail@ourRestraunt.com</span>
+              </li>
+              <li>
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-telephone"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                    />
+                  </svg>
+                </span>
+                <span>123-456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h2>Reserver a table</h2>
+          <div class="form-box">
+            <form method="POST">
+              <div class="input-box w100">
+                <input id="user-name" type="text" name="" required />
+                <span>Full Name</span>
+              </div>
+              <div class="input-box w100">
+                <input id="user-email" type="text" name="" required />
+                <span>Email Address</span>
+              </div>
+              <div class="input-box w100">
+                <input id="user-phone" type="text" name="" required />
+                <span>Phone Number</span>
+              </div>
+              <div class="input-box w100">
+                <button id="book" type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      $("#book").on("click", function () {
+        const userEmail = $("#user-email").val();
+        const userPhone = $("#user-phone").val();
+        const userName = $("#user-name").val();
+
+        $("#user-email").val("");
+        $("#user-phone").val("");
+        $("#user-name").val("");
+        $.get("/api/tables/", function (data) {
+          if (data.length < 5) {
+            const userInfo = {
+              email: userEmail,
+              phone: userPhone,
+              name: userName,
+              booked: true,
+            };
+            $.post("/api/tables/", userInfo).then(
+              alert("Your table has been booked.")
+            );
+          } else {
+            const resInfo = {
+              email: userEmail,
+              phone: userPhone,
+              name: userName,
+            };
+            $.post("/api/waitlist/", resInfo).then(
+              alert("You have been added to the waitlist.")
+            );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
